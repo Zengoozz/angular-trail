@@ -1,0 +1,10 @@
+<div fxFlexOffset="5%">
+    <h3>{{post.title}}</h3>
+    <p>{{post.votes}}</p>
+    <button (click)="upVote(post)">THUMBS UP</button>
+    <button (click)="downVote(post)">THUMBS DOWN</button>
+    <button (click)="resetVote(post)">RESET</button>
+    <br> <br>
+    <button (click)="starPost(post)">STAR</button>
+    <button (click)="hide(post)">HIDE</button>
+</div>

@@ -1,0 +1,12 @@
+<h1>Favorite Posts</h1>
+<div fxLayout="row" fxLayoutAlign="center">
+    <nav>
+        <a fxFlexOffset="20%" routerLink="/">HOME</a>
+        <a fxFlexOffset="20%" routerLink="/about">About</a>
+        <a fxFlexOffset="20%" routerLink="/starredPosts">Favorite</a>
+    </nav>
+</div>
+<br> <br> <br>
+<app-post-item *ngFor="let post of starredList" [post]="post"></app-post-item>
+<br><br><br><br>
+<button (click)="clearPosts()">CLEAR</button>

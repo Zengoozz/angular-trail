@@ -1,0 +1,14 @@
+<h1>Create a post</h1>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="postTitle.touched && postTitle.invalid">
+        <p style="color: red;" *ngIf="postTitle.errors?.['required']">
+            Title is required.
+        </p>
+    </div>
+    <label for="postTitle">Title</label>
+    <br>
+    <input type="text" id="postTitle" required #postTitle="ngModel" name="title" placeholder="Enter post title"
+        [(ngModel)]="title">
+    <br> <br>
+    <button [disabled]="form.invalid" type="submit">Submit</button>
+</form>

@@ -1,0 +1,24 @@
+<h1 fxLayoutAlign="center">{{pageTitle}}</h1>
+<!-- 
+<ul *ngFor="let post of postsList">`
+    <li>{{post.title}}</li>
+</ul> -->
+<div fxLayout="row" fxLayoutAlign="center">
+    <nav>
+        <a fxFlexOffset="20%" routerLink="/">HOME</a>
+        <a fxFlexOffset="20%" routerLink="/about">About</a>
+        <a fxFlexOffset="20%" routerLink="/starredPosts">Favorite</a>
+    </nav>
+</div>
+<br> <br> <br>
+
+
+<div fxLayout="row" fxLayoutAlign="space-evenly">
+    <div fxLayout="column" fxLayoutAlign="start">
+        <app-post-item *ngFor="let post of postsList" [post]="post" (hidePost)="hidePost($event)"></app-post-item>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start">
+        <app-sign-up></app-sign-up>
+        <app-create-post (addPost)="addPost($event)"></app-create-post>
+    </div>
+</div>
